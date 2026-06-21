@@ -1,0 +1,31 @@
+---
+import "../styles/index.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>berces</title>
+    <meta
+      name="description"
+      content="This web application serves as a landing page for a Chilean company offering camera sales, installation, and repair services, connecting customers with reliable solutions."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Berces Chile - Seguridad y Videovigilancia" />
+    <meta property="og:description" content="Instalación, venta y mantención de sistemas de cámaras de seguridad para hogares y empresas en Chile." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://berces.cl" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { height: 100%; margin: 0; } #root { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <slot />
+    </div>
+  </body>
+</html>
