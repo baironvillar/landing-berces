@@ -14,25 +14,25 @@ Landing page corporativa para **Berces Chile**, empresa especializada en sistema
 
 ```bash
 # Instalar dependencias
-npm install
+bun install
 
 # Iniciar servidor de desarrollo
-npm run dev
+bun dev
 
 # Build de producción
-npm run build
+bun run build
 
 # Vista previa del build
-npm run preview
+bun run preview
 
 # Type-check
-npm run typecheck
+bun run typecheck
 
 # Linter
-npm run lint
+bun run lint
 
 # Formatear código
-npm run format
+bun run format
 ```
 
 ## Despliegue en Vercel
@@ -46,9 +46,9 @@ Vercel detecta Astro automáticamente. Solo conectar el repositorio y hacer depl
 | Parámetro | Valor |
 |---|---|
 | **Framework preset** | Astro |
-| **Build command** | `npm run build` |
+| **Build command** | `bun run build` |
 | **Output directory** | `dist` |
-| **Install command** | `npm install` |
+| **Install command** | `bun install` |
 | **Node.js version** | 20.x o superior |
 
 ### Archivo `vercel.json` (opcional)
