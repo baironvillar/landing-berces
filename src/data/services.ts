@@ -11,7 +11,7 @@ export const SERVICES: Service[] = [
 	{
 		icon: Wrench,
 		title: "Instalación Profesional",
-		desc: "Nuestro equipo técnico certificado realiza instalaciones residenciales y comerciales en Antofagasta con garantía de 12 meses.",
+		desc: "Realizamos instalaciones residenciales y comerciales en Antofagasta con garantía de 12 meses.",
 		tags: ["Visita Técnica Gratis", "Garantía 12 meses", "Soporte Técnico"],
 	},
 	{

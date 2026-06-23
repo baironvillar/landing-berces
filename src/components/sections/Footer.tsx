@@ -14,7 +14,7 @@ export function Footer() {
 								<Camera size={13} className="text-primary-foreground" />
 							</div>
 							<span className="text-lg font-extrabold font-heading">
-								BER<span className="text-primary">CES</span> CHILE
+								BER<span className="text-primary">CES</span>
 							</span>
 						</div>
 						<p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -45,11 +45,11 @@ export function Footer() {
 							</div>
 							<div className="flex items-center gap-2">
 								<Mail size={12} />
-								<span>contacto@berces.cl</span>
+								<span>berces.ltda.spa@gmail.com</span>
 							</div>
 							<div className="flex items-center gap-2">
 								<MapPin size={12} />
-								<span>Santiago, Chile</span>
+								<span>Antofagasta, Chile</span>
 							</div>
 						</div>
 					</div>
@@ -57,7 +57,7 @@ export function Footer() {
 
 				<div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
 					<span className="text-xs text-muted-foreground font-mono">
-						© 2026 Berces Chile · RUT 76.XXX.XXX-X · Todos los derechos reservados
+						© 2026 Berces · RUT 76.XXX.XXX-X · Todos los derechos reservados
 					</span>
 					<div className="flex items-center gap-1 text-xs text-muted-foreground">
 						<div className="w-1.5 h-1.5 rounded-full bg-green-400" />

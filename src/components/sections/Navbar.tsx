@@ -14,7 +14,7 @@ export function Navbar() {
 
 	return (
 		<nav
-			className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur border-b border-border" : "bg-transparent"}`}
+			className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur border-b border-border shadow-sm shadow-black/20" : "bg-background/60 backdrop-blur border-b border-transparent"}`}
 		>
 			<div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
 				<a href="#inicio" className="flex items-center gap-2">
@@ -25,8 +25,7 @@ export function Navbar() {
 						className="text-xl font-extrabold tracking-tight text-foreground font-heading"
 						style={{ letterSpacing: "0.02em" }}
 					>
-						BER<span className="text-primary">CES</span>{" "}
-						<span className="text-muted-foreground font-normal text-base">CHILE</span>
+						BER<span className="text-primary">CES</span>
 					</span>
 				</a>
 

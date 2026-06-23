@@ -1,0 +1,80 @@
+<div style="font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background: #0f1623; color: #e8edf5; border-radius: 8px; overflow: hidden;">
+	<!-- Header -->
+	<div style="background: #080c14; padding: 28px 32px; border-bottom: 2px solid #f5c200; text-align: center;">
+		<div style="font-size: 26px; font-weight: 800; letter-spacing: 1px; color: #e8edf5;">
+			BER<span style="color: #f5c200;">CES</span>
+		</div>
+		<div style="font-size: 11px; color: #8a8a6a; margin-top: 4px; text-transform: uppercase; letter-spacing: 2px;">
+			Seguridad · Cámaras · Instalación
+		</div>
+	</div>
+
+	<!-- Badge -->
+	<div style="text-align: center; padding: 24px 32px 8px;">
+		<span style="display: inline-block; background: #f5c200; color: #080c14; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 20px;">
+			{{service}}
+		</span>
+	</div>
+
+	<!-- Body -->
+	<div style="padding: 16px 32px 24px;">
+		<table role="presentation" style="width: 100%; border-collapse: collapse;">
+			<tr>
+				<td style="padding: 10px 0; width: 90px; vertical-align: top;">
+					<div style="font-size: 11px; color: #8a8a6a; text-transform: uppercase; letter-spacing: 1px;">Nombre</div>
+				</td>
+				<td style="padding: 10px 0; vertical-align: top;">
+					<div style="font-size: 15px; font-weight: 600; color: #e8edf5;">{{name}}</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 11px; color: #8a8a6a; text-transform: uppercase; letter-spacing: 1px;">Teléfono</div>
+				</td>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 15px; color: #e8edf5;">{{phone}}</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 11px; color: #8a8a6a; text-transform: uppercase; letter-spacing: 1px;">Email</div>
+				</td>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 15px; color: #e8edf5;">{{email}}</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 11px; color: #8a8a6a; text-transform: uppercase; letter-spacing: 1px;">Servicio</div>
+				</td>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 15px; color: #e8edf5;">{{service}}</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 11px; color: #8a8a6a; text-transform: uppercase; letter-spacing: 1px;">Mensaje</div>
+				</td>
+				<td style="padding: 10px 0; border-top: 1px solid rgba(245, 194, 0, 0.1); vertical-align: top;">
+					<div style="font-size: 14px; color: #c8cdd5;">{{message}}</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="padding: 0 32px 20px; text-align: center;">
+		<div style="font-size: 11px; color: #5a5a4a; font-family: 'Courier New', monospace;">
+			Recibido el {{time}}
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div style="background: #080c14; padding: 16px 32px; border-top: 1px solid rgba(245, 194, 0, 0.08); text-align: center;">
+		<div style="font-size: 11px; color: #5a5a4a;">
+			BERCES · <a href="https://berces.cl" style="color: #f5c200; text-decoration: none;">berces.cl</a> · +56 9 4619 8238
+		</div>
+		<div style="font-size: 10px; color: #3a3a2a; margin-top: 4px;">
+			Respuesta estimada: menos de 2 horas hábiles
+		</div>
+	</div>
+</div>

@@ -5,6 +5,7 @@ import { Hero } from "./sections/Hero";
 import { Navbar } from "./sections/Navbar";
 import { ProcessSection } from "./sections/ProcessSection";
 import { ServicesSection } from "./sections/ServicesSection";
+import { TeamSection } from "./sections/TeamSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { WhatsAppFloat } from "./sections/WhatsAppFloat";
 
@@ -16,6 +17,7 @@ export default function App() {
 			<ServicesSection />
 			<ProcessSection />
 			<AboutSection />
+			<TeamSection />
 			<TestimonialsSection />
 			<ContactSection />
 			<WhatsAppFloat />

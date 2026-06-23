@@ -1,5 +1,8 @@
-import { ArrowRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { ArrowRight, CheckCircle2, Loader2, XCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 import { CONTACT_INFO } from "../../data/contact";
+import { EMAILJS_CONFIG } from "../../data/emailjs";
 
 const SERVICE_OPTIONS = [
 	"Instalación de cámaras",
@@ -10,6 +13,45 @@ const SERVICE_OPTIONS = [
 ];
 
 export function ContactSection() {
+	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+	useEffect(() => {
+		if (status === "success" || status === "error") {
+			const timer = setTimeout(() => setStatus("idle"), 6000);
+			return () => clearTimeout(timer);
+		}
+	}, [status]);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setStatus("sending");
+
+		const form = e.currentTarget;
+		const data = new FormData(form);
+		const rawService = data.get("service") as string;
+		const service = rawService === "Otro" ? "NUEVA SOLICITUD DE COTIZACIÓN" : rawService;
+
+		try {
+			await emailjs.send(
+				EMAILJS_CONFIG.SERVICE_ID,
+				EMAILJS_CONFIG.TEMPLATE_ID,
+				{
+					name: data.get("name") as string,
+					phone: data.get("phone") as string,
+					email: data.get("email") as string,
+					service,
+					message: data.get("message") as string,
+				},
+				EMAILJS_CONFIG.PUBLIC_KEY,
+			);
+			setStatus("success");
+			form.reset();
+		} catch (err) {
+			console.error("EmailJS error:", err);
+			setStatus("error");
+		}
+	};
+
 	return (
 		<section id="contacto" className="py-24">
 			<div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16">
@@ -44,7 +86,36 @@ export function ContactSection() {
 
 				<div className="bg-card border border-border rounded-lg p-8">
 					<h3 className="text-xl font-bold text-foreground mb-6 font-heading">Solicitar Cotización Gratuita</h3>
-					<form className="space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+					{status === "success" && (
+						<div className="flex items-center gap-3 bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-6">
+							<CheckCircle2 size={20} className="text-green-400 shrink-0" />
+							<div>
+								<div className="text-sm font-semibold text-green-400">¡Solicitud enviada con éxito!</div>
+								<div className="text-xs text-green-400/70">
+									Recibimos tu mensaje. Te contactaremos en menos de 2 horas hábiles.
+								</div>
+							</div>
+						</div>
+					)}
+
+					{status === "error" && (
+						<div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 rounded-lg p-4 mb-6">
+							<XCircle size={20} className="text-red-400 shrink-0" />
+							<div>
+								<div className="text-sm font-semibold text-red-400">Error al enviar</div>
+								<div className="text-xs text-red-400/70">
+									Hubo un problema. Intentá de nuevo o escribinos por{" "}
+									<a href="https://wa.me/56946198238" className="underline">
+										WhatsApp
+									</a>
+									.
+								</div>
+							</div>
+						</div>
+					)}
+
+					<form className="space-y-4" onSubmit={handleSubmit}>
 						<div className="grid sm:grid-cols-2 gap-4">
 							<div>
 								<label htmlFor="contact-name" className="block text-xs text-muted-foreground mb-1.5 font-mono">
@@ -118,14 +189,21 @@ export function ContactSection() {
 
 						<button
 							type="submit"
-							className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+							disabled={status === "sending"}
+							className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
 						>
-							Enviar Solicitud Gratuita
-							<ArrowRight size={16} />
+							{status === "sending" ? (
+								<>
+									<Loader2 size={16} className="animate-spin" />
+									Enviando...
+								</>
+							) : (
+								<>
+									Enviar Solicitud Gratuita
+									<ArrowRight size={16} />
+								</>
+							)}
 						</button>
-						<p className="text-center text-xs text-muted-foreground font-mono">
-							Respuesta en menos de 2 horas hábiles · Sin compromiso
-						</p>
 					</form>
 				</div>
 			</div>

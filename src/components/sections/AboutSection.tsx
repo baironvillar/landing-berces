@@ -1,8 +1,7 @@
-import { ArrowRight, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "../ui/Button";
 
 const FEATURES = [
-	"Técnicos certificados por Hikvision y Dahua",
 	"Visita técnica sin costo en Antofagasta",
 	"Garantía de 12 meses en instalaciones",
 	"Soporte remoto 24/7 incluido",
@@ -22,15 +21,6 @@ export function AboutSection() {
 							loading="lazy"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-tr from-background/60 to-transparent" />
-					</div>
-					<div className="absolute -bottom-6 -right-6 bg-card border border-border rounded-lg p-4 shadow-2xl max-w-[180px]">
-						<div className="flex items-center gap-1 mb-1">
-							{[1, 2, 3, 4, 5].map((s) => (
-								<Star key={s} size={10} className="text-accent fill-accent" />
-							))}
-						</div>
-						<div className="text-xs text-foreground font-semibold mb-0.5">Certificados Hikvision</div>
-						<div className="text-[11px] text-muted-foreground">Partner oficial en Chile</div>
 					</div>
 				</div>
 
